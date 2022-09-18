@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use("/", stud_routes);
+
+app.get("/", (req,res) => {
+    res.send("Hello from Heroku")
+})
 // var mysqlConnection = mySql.createConnection({
 //     host:'localhost',
 //     user: 'root',
