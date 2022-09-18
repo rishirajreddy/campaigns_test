@@ -1,0 +1,51 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.create-btn {
+    margin-right: 2rem;
+}
+
+p {
+    font-size: small;
+}
+
+.header-title h2 {
+    /* margin-top: 5rem; */
+    display: block;
+    width: 100%;
+}
+.header-title p {
+    position: relative;
+    height: 10px;
+    top: -10px;
+    color: #969596;
+}
+
+.mat-raised-button.mat-success,
+  .mat-flat-button.mat-success,
+  .mat-fab.mat-success,
+  .mat-mini-fab.mat-success {
+    color: white;
+    background-color: #0F52FF;
+  }
+
+mat-card{
+    margin-right: 2rem;
+    height: 500px;
+}
+
+.camp-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters{
+    align-items: center;
+    display: flex;
+}

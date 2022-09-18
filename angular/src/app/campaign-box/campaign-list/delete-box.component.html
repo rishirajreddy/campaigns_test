@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Delete campaign <b>{{campaignName}}</b> ??</h1>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button 
+    (click)="deleteCampaign()"
+    mat-raised-button
+    color="warn"
+    cdkFocusInitial>Delete</button>
+  </div>

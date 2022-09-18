@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="header">
+        <div class="header-title">
+            <h2>Your Campaigns</h2>
+            <p>Check the list of campaigns you created</p>
+        </div>
+        <button 
+        routerLink="/add_campaign"
+        class="create-btn" 
+            style="margin-right: 10px;"
+            mat-raised-button color="success">
+            <mat-icon style="color: white;">add_circle_outline</mat-icon>
+            Create Campaign
+        </button>
+    </div>
+
+    <mat-card>
+        <div class="camp-search">
+            <mat-form-field 
+                [style.width.px]=400
+                class="example-form-field" appearance="outline">
+                <button matPrefix mat-icon-button aria-label="Clear">
+                <mat-icon>search</mat-icon>
+                </button>
+                    <mat-label>Search for the campaign</mat-label>
+                    <input matInput type="text">
+      </mat-form-field>
+      
+      <div class="filters">
+      <p>Platform:</p>
+      <button class="create-btn" 
+      style="margin-right: 10px;"
+      mat-raised-button>
+      All Platform
+      <mat-icon style="color: black;">arrow_drop_down</mat-icon>
+      </button>
+
+      <p>Status:</p>
+      <button class="create-btn" 
+      style="margin-right: 10px;"
+      mat-raised-button>
+      All Status
+      <mat-icon style="color: black;">arrow_drop_down</mat-icon>
+      </button>
+
+      <button class="create-btn" 
+      style="margin-right: 10px;"
+      mat-raised-button>
+      Last 30 days
+      <mat-icon style="color: black;">arrow_drop_down</mat-icon>
+      </button>
+
+        </div>
+    </div>
+
+    <app-campaign-list></app-campaign-list>
+    </mat-card>
+    
+</div>

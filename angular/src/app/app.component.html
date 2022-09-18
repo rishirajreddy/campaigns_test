@@ -1,0 +1,62 @@
+  <mat-toolbar class="nav-1">
+  <span class="example-spacer"></span>
+  <span class="example-spacer"></span>
+  <p style="font-size:small; margin-right: 10px;font-weight: 600;color: #969596;">Free trial ends in 2 days</p>
+  <button 
+  style="margin-right: 10px;"
+  mat-raised-button color="success">
+    <mat-icon>star</mat-icon>
+    Buy Plan
+  </button>
+  <button 
+  style="margin-right: 10px;"
+  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>card_giftcard</mat-icon>
+ </button>
+  <button 
+  style="margin-right: 10px;"
+  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>notifications</mat-icon>
+ </button>
+  <img class="profile" src="https://learnenglish.britishcouncil.org/sites/podcasts/files/styles/max_1300x1300/public/2021-10/RS8003_GettyImages-994576028-hig.jpg?itok=Ll1aydU5" alt="distressed Italian wall in pink and grey hues">
+  <p style="margin-left: 5px; font-size:small; font-weight: 600;">Mukund Cake shop</p>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>share</mat-icon>
+ </button>
+</mat-toolbar>
+
+
+<mat-toolbar class="nav-2">
+  <div class="logo">
+  <img src="../assets/images/logo.png" alt="distressed Italian wall in pink and grey hues">
+</div>
+
+<mat-icon class="home-icon" style="color: white;">home</mat-icon>
+<div class="home">
+  <p style="color: white;">Home</p>
+</div>
+
+<div 
+routerLink="/"
+class="camp-icons">
+<mat-icon class="camp-icon" style="color: blue;">scatter_plot</mat-icon>
+<div class="camp">
+  <p style="color:blue;">Campaign</p>
+</div>
+</div>
+
+<mat-icon class="camp-icon" style="color: white;">shopping_basket</mat-icon>
+<div class="camp">
+  <p style="color: white;">Products</p>
+</div>
+
+<mat-icon class="camp-icon" style="color: white;">group</mat-icon>
+<div class="camp">
+  <p style="color: white;">Products</p>
+</div>
+</mat-toolbar>
+
+<div class="other-components">
+  <router-outlet></router-outlet>
+  <!-- <app-campaign-box></app-campaign-box> -->
+</div>

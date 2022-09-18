@@ -1,0 +1,29 @@
+.camp-container {
+    height: 400px;
+    overflow: auto;
+  }
+table {
+    width: 100%;
+}
+
+.camp-details{
+  display: flex;
+  align-items: center;
+}
+
+.camp-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+}
+
+.camp{
+  display: block;
+  margin-left: 1rem;
+}
+.camp-name {
+  margin: 5px 0px;
+}
+.time{
+  margin: 0px 0px;
+}

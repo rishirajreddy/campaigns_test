@@ -1,0 +1,252 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.create-btn {
+    margin-right: 2rem;
+}
+
+p {
+    font-size: small;
+}
+mat-stepper {
+    background-color: #F4F7FF;
+    margin-right: 3rem;
+}
+
+.header-title h2 {
+    /* margin-top: 5rem; */
+    display: block;
+    width: 100%;
+}
+.header-title p {
+    position: relative;
+    height: 10px;
+    top: -10px;
+    color: #969596;
+}
+
+.mat-raised-button.mat-success,
+  .mat-flat-button.mat-success,
+  .mat-fab.mat-success,
+  .mat-mini-fab.mat-success {
+    color: white;
+    background-color: #0F52FF;
+  }
+
+.main-card{
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-right: 2rem;
+    height:450px;
+    border-radius: 15px;
+}
+/* .main-card::-webkit-scrollbar {
+    display: none;
+  } */
+
+.buttons {
+    margin: 2rem auto;
+}
+
+
+.buttons mat-card {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    text-align: center;
+    font-weight: 600;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.mat-stepper {
+    pointer-events: none !important;
+  }
+
+.products {
+    margin: 2rem auto;
+}
+
+.services {
+    margin: 2rem auto;
+}
+
+.products mat-card {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    text-align: center;
+    font-weight: 600;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.services mat-card {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    text-align: center;
+    font-weight: 600;
+    height: 30px;
+    width: 300px;
+    /* margin-bottom: 1rem; */
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #F4F7FF;
+    border: 2px solid #0F52FF;
+}
+
+.camp-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters{
+    align-items: center;
+    display: flex;
+}
+
+.first-row {
+    display: flex;
+    justify-items: center;
+}
+
+.service-row {
+    display: flex;
+    justify-items: center;
+}
+
+.first-row mat-card {
+    margin-top: 1rem;
+    display: flex;
+    width: 400px;
+    height: 50px;
+    border-radius: 15px;
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(128,123,128,1);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(128,123,128,1);
+    box-shadow: -1px 2px 5px 0px rgba(128,123,128,1);
+}
+
+.service-row mat-card {
+    /* margin-top: 1rem; */
+    display: flex;
+    width: 400px;
+    height: 50px;
+    border-radius: 15px;
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(128,123,128,1);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(128,123,128,1);
+    box-shadow: -1px 2px 5px 0px rgba(128,123,128,1);
+}
+
+.first-row img {
+    height: 55px;
+    width: 55px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+
+.continue {
+    float: right;
+    margin-right: 2rem;
+}
+.mat-raised-button.mat-continue {
+    color: white;
+    background-color: blue;
+}
+.settings{ 
+    margin-top: 2rem;
+}
+
+.date-picker {
+    display: flex;
+}
+
+.end-date {
+    margin-left: 3rem;
+    /* bottom: -20px; */
+    margin-bottom: 0px !important;
+}
+.start-date{
+    bottom: -60px;
+    margin-bottom: 0px !important;
+}
+.start-date mat-form-field{
+    top: -10px;
+    margin-bottom: 0px !important;
+}
+
+.end-date p{
+    display: block;
+}
+.end-date mat-form-field{
+    top: -10px;
+    margin-bottom: 0px !important;
+}
+.camp-budget{
+    top: -10px;
+    margin: 5px 0;
+}
+.camp-budget p {
+    margin: 0px 0px;
+}
+mat-slider {
+    width: 700px;
+    /* margin-left: 3rem; */
+    /* transform: scale(2); */
+}
+
+.location {
+    margin-top: 2rem;
+}
+.final-step {
+    margin-top: 4rem;
+}
+.cards {
+    height: 300px;
+}
+mat-grid-tile {
+    border: 1px solid #969596;
+    border-radius: 15px;
+    background: lightblue;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .mat-raised-button.mat-card-btn {
+    background-color: #0F52FF;
+    color: white;
+  }
+
+  .image-card {
+    height: 130px;
+    width: 100%;
+  }
+
+  .image-card img {
+    height: 100%;
+    width: 100%;
+  }
+.example-card {
+    margin-top: 1rem;
+    width: 100%;
+    min-height: 100%;
+    /* scale: 0.2; */
+  }
+  .example-header-image {
+    background-image: url('https://learnenglish.britishcouncil.org/sites/podcasts/files/styles/max_1300x1300/public/2021-10/RS8003_GettyImages-994576028-hig.jpg?itok=Ll1aydU5');
+    background-size: cover;
+  }
+
+  .template {
+    border: 2px solid #0F52FF;
+  }

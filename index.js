@@ -10,9 +10,9 @@ db.authenticate()
     .catch(err => console.log(err))
 
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors());
 app.use("/", stud_routes);
 
 app.get("/", (req,res) => {

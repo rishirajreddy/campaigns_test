@@ -14,5 +14,6 @@ router.post("/add", campController.addCampaign);
 router.delete("/delete/:id", campController.deleteCampaign);
 router.get("/get_all", campController.getAllCampaigns);
 router.get("/get_campaign/:id", campController.getCampaign);
+router.patch("/update/:id", campController.updateCampaign);
 
 module.exports = router;

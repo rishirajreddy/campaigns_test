@@ -67,3 +67,23 @@ exports.getCampaign = async(req,res) => {
             console.log(err);
         })
 }
+
+exports.updateCampaign = async(req,res) => {
+    const id = req.params.id;
+
+    await Campaign.update(
+        {
+            campaign: req.body.campaign,
+            platform:req.body.platform,
+            budget: req.body.budget
+        }
+        ,  {
+        where : {id:id}
+    })
+    .then((result) => {
+        console.log(result);
+    })  
+    .catch(err => {
+        console.log(err);
+    })
+}

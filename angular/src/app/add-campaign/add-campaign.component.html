@@ -1,0 +1,205 @@
+<div class="container">
+    <div class="header">
+        <div class="header-title">
+            <h2>Your Ad Campaign</h2>
+            <p>Launch your ad in just 4 easy steps</p>
+        </div>
+    </div>
+
+      <mat-stepper linear #stepper>
+        <mat-step label="What you want to do">
+        </mat-step>
+        <mat-step label="Choose product">
+        </mat-step>
+        <mat-step label="Campaign settings">
+       </mat-step>
+        <mat-step label="Ready to go">
+       </mat-step>
+      </mat-stepper>
+      
+    <mat-card class="main-card">
+        <div class="header-text">
+            <h3>{{mode}} <span style="font-size: small;font-weight:400">(Step {{modesArray.indexOf(mode)+1}} of 4)</span></h3>
+        </div>
+        <mat-divider></mat-divider>
+        
+        <ng-container *ngIf="mode === this.modesArray[0]">
+            <div 
+            *ngFor="let service of servicessArr; let i = index"
+            class="services">
+                <div class="service-row">
+                    <mat-card
+                    *ngFor="let item of servicessArr[i]"
+                    [ngClass]="{'selected':item.id === selectedService}"
+                    (click)="selectService(item.id)"
+                    >
+                    <mat-icon>{{item.icon}}</mat-icon>
+                    <mat-card-content style="margin-left: 1rem;">
+                    <mat-card-title style="font-size:medium;text-align: left;">{{item.service}}</mat-card-title>
+                    <mat-card-subtitle style="font-size: small; text-align: left;">&#x20b9; {{item.description}}</mat-card-subtitle>
+                    </mat-card-content>
+                    </mat-card>    
+                </div>
+            </div>
+        </ng-container>
+
+        <div
+        *ngIf="mode === this.modesArray[1]"
+        class="products">
+            <div 
+            *ngFor="let product of productsArr; let i = index"
+            class="first-row">
+                <mat-card
+                *ngFor="let item of productsArr[i]"
+                [ngClass]="{'selected':item.id === selectedProduct}"
+                (click)="selectProduct(item.id)"
+                >
+                <img
+                style="background-size: cover;"
+                src="{{item.image}}" alt="">
+                <mat-card-content style="margin-left: 1rem;">
+                <mat-card-title style="font-size:medium; text-align: left;">{{item.product}}</mat-card-title>
+                <mat-card-subtitle style="font-size: small; text-align: left;">&#x20b9; {{item.price.toLocaleString()}}</mat-card-subtitle>
+                </mat-card-content>
+                </mat-card>
+                </div>
+        </div>
+
+        <div 
+        *ngIf="mode === this.modesArray[2]"
+        class="settings">
+                <div class="budgets">
+                    <p><u><b>Budget and dates info</b></u></p>
+                    <p>Lifetime Daily</p>
+                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                        <mat-button-toggle value="bold">Lifetime</mat-button-toggle>
+                        <mat-button-toggle value="italic">Daily</mat-button-toggle>
+                      </mat-button-toggle-group> <br>
+
+                      <div class="date-picker">
+                      <div class="start-date">
+                        <p style="font-size: small;">Start Date</p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Choose a start date</mat-label>
+                          <input matInput [matDatepicker]="picker" [(ngModel)]="start_date">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <!-- {{datePicker}} -->
+                    </div>
+
+                    <div class="end-date">
+                    <p style="font-size: small;">End Date</p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Choose a end date</mat-label>
+                        <input matInput [matDatepicker]="picker2" [(ngModel)]="end_date">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="camp-budget">
+                    <p style="font-size: small;">Enter campaign budget</p>
+                    <label>0</label>
+                    <mat-slider 
+                    class="mat-slider"
+                    min="100"
+                    max="5000"
+                    step="100"
+                    [(ngModel)]="value"
+                    ></mat-slider>
+                    <label>{{value}}</label>
+                </div>
+
+                </div>
+
+                <div class="location">
+                    <p><u><b>Location info</b></u></p>
+                    <p>Location Type</p>
+                    <mat-button-toggle-group 
+                    #group="matButtonToggleGroup"
+                    name="fontStyle" aria-label="Font Style">
+                        <mat-button-toggle 
+                        focus
+                        value="location">Location</mat-button-toggle>
+                        <mat-button-toggle 
+                        value="radius">Radius</mat-button-toggle>
+                      </mat-button-toggle-group> <br>
+                    
+                      <div 
+                      *ngIf="group.value === 'location'"
+                      class="location">
+                      <p>Select Location</p>
+                      <mat-form-field 
+                      [style.width.px]=400
+                      appearance="outline">
+                        <mat-label>Select a place name, address or coordinates</mat-label>
+                        <input matInput type="text" [(ngModel)]="location">
+                        <mat-icon matSuffix>location_searching</mat-icon>
+                      </mat-form-field>
+                    </div>
+
+                <div 
+                *ngIf="group.value === 'radius'"
+                class="camp-budget">
+                    <p style="font-size: small;">Select target radius</p>
+                    <label>0</label>
+                    <mat-slider 
+                    class="mat-slider"
+                    min="0"
+                    max="30"
+                    step="1"
+                    [(ngModel)]="value2"
+                    ></mat-slider>
+                    <label style="margin-left: 1rem;">{{value2}}</label>
+                </div>
+
+                </div>
+        </div>
+
+        <div 
+        *ngIf="mode === this.modesArray[3]"
+        class="final-step">
+        <div class="cards">
+            <mat-grid-list 
+            gutterSize="7"
+            cols="4" rowHeight="2:2">
+                <mat-grid-tile
+                *ngFor="let cake of newArray"
+                [ngClass]="{'template':cake.id === selectedTemp}"
+                (click)="selectFinal(cake.id, cake.image)"
+                >
+                     <mat-card 
+            class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title style="color: blue;">Mukund Cake Shop</mat-card-title>
+                <mat-card-subtitle>Sponsered</mat-card-subtitle>
+              </mat-card-header>
+              <p style="font-size: small;">
+                We are the best bakery around you. Please like my page 
+                to get updates on exciting offers and discounts.
+            </p>
+            <div class="image-card">
+                <img src="{{cake.image}}" alt="">
+            </div>
+            <mat-card-actions
+            style="text-align: center;"
+            >
+                <button mat-raised-button color="card-btn">Change Image</button>
+                <button mat-raised-button color="card-btn">Edit Text</button>
+              </mat-card-actions>
+              </mat-card>
+                </mat-grid-tile>
+              </mat-grid-list>
+              
+            </div>
+        </div>
+
+    </mat-card><br>
+    <button 
+    (click)="nextStep($event)"
+    class="continue" color="continue" mat-raised-button>{{mode === this.modesArray[3] ? 'Start Campaign':'Continue'}}</button>
+    
+</div>
